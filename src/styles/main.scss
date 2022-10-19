@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+$brown: #59443F;
+$light-brown: #C3B9B5;
+$dark: #080606;
+$white: #FFFFFF;
+$orange: #FFC59E;
+
+body {
+    font-family: 'Open Sans', normal;
+    font-size: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1350px;
+    margin: 0 auto;
+    margin-top: 84px;
+    padding-left: 15px;
+    padding-right: 15px;
+    &_logo {
+        background-image: url(../images/logo.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 62px;
+        width: 79px;
+    }
+}
+
+.header_list {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+.header_item {
+    //margin-left: 35px;
+    padding-right: 69px;
+}
+
+.header_link {
+    text-decoration: none;
+    color: $light-brown;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: 0.2s;
+    &:hover {
+        color: $orange;
+    }
+}
+
+.header_btn {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: $orange;
+    //position: relative;                   сначала хотел сделать через positioning, но через flex ближе к макету
+    &::before {
+        content: '';
+        background-image: url(../images/location.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        //position: absolute;
+        height: 30px;
+        width: 20px;
+        //left: -33px;
+        //bottom: 0px;
+        display: block;
+        margin-right: 19px;
+    }
+}
+
+.container {
+    display: block;
+    max-width: 1350px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    &_services {
+        margin-top: 150px;
+    }
+    &_app {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.main {
+    margin-top: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &_title {
+        font-family: 'Open Sans', normal;
+        font-weight: 400;
+        font-size: 80px;
+        line-height: 138%;
+        color: $dark;
+        margin-top: auto;
+    }
+    &_btn {
+        //margin-top: 50px;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: center;
+        color: $white;
+        font-weight: 700;
+        background: #FFC59E;
+        box-shadow: 0px 4px 20px #FFC59E;
+        border-radius: 33.5px;
+        border: none;
+        height: 67px;
+        width: 285px;
+        cursor: pointer;
+        transition: 0.2s;
+        &:hover {
+            background-color: $brown;
+            box-shadow: 0px 4px 20px $brown;
+        }
+    }
+    &_social {
+        margin-top: 197px; // padding делаю здесь, чтобы не засорять класс social лишним свойством, и потом переиспользовать целиком внизу
+    }
+}
+
+.social{
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    list-style-type: none;
+    &_item {
+        margin-right: 50px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &_svg {
+        fill: $light-brown;
+        &_white {
+            fill: $white;
+        }
+    }
+}
+
+.services {
+    display: grid;
+    grid-template-rows: 23% 23% 23% 23%;
+    grid-template-columns: 23% 23% 23% 23%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 24px;
+    margin-bottom: 157px;
+    &_item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 220px;
+        box-sizing: border-box;
+        //width: 320px;
+        background: #FFFEFE;
+        border-radius: 20px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        &:hover {
+            border: solid 3px $orange;
+            box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+            .services_svg {
+                fill: $brown;
+            }
+        }
+    }
+    &_title {
+        font-family: 'Open sans', normal;
+        display: block;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 133%;
+        margin: 0;
+        padding-top: 24px;
+        padding-left: 24px;
+    }
+    &_text {
+        font-family: 'Open Sans', normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 20px;
+        display: block;
+        margin: 0;
+        padding-bottom: 24px;
+        padding-left: 24px;
+        z-index: 1;
+    }
+    &_svg {
+        position: absolute;
+        right: 24px;
+        bottom: 24px;
+        fill: $orange;
+        z-index: 0;
+        &_special {
+            position: absolute;
+            fill: $white;
+            stroke: $orange;
+            right: 24px;
+            bottom: 24px;
+        }
+    }
+}
+
+.counter {
+    background-color: #FBF8F8;
+    height: 865px;
+    position: relative;
+    &_title {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 144px;
+        line-height: 110px;
+        text-align: center;
+        color: $brown;
+        margin: 0 auto;
+        padding-top: 230px;
+        padding-bottom: 30px;
+    }
+    &_text {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 80px;
+        line-height: 110px;
+        text-align: center;
+        color: #080606;
+        max-width: 897px;
+        margin: 0 auto;
+    }
+    &_image {
+        position: absolute;
+        width: 288px;
+        height: 223px;
+        left: calc(50% + 404px);
+        top: 99px;
+    }
+}
+
+.app {
+    background-color: $orange;
+    margin: 0 auto;
+    align-items: center;
+    &_text{
+        margin-top: 299px;
+        flex-basis: 598px;
+    }
+    &_title {
+        margin-top: 0;
+        margin-bottom: 43px;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 80px;
+        line-height: 110px;
+        color: $white;
+    }
+    &_image {
+        position: relative;
+        margin-bottom: 118px;
+        padding-top: 166px;
+    }
+    &_rabbit {
+        position: absolute;
+        z-index: 1;
+        max-width: 363px;
+        left: -300px;
+        bottom: 56px;
+    }
+    &_phone {
+        position: relative;
+        z-index: 2;
+        max-width: 363px;
+    }
+}
+
+.downloads {
+    display: flex;
+    gap: 29px;
+    
+    &_link {
+        background-size:cover;
+        background-repeat: no-repeat;
+        width: 165px;
+        height: 49px;
+        border-radius: 5px;
+        &_footer {
+            width: 140px;
+            height: 39px;
+        }
+    }
+    &_appStore {
+        background-image: url(../images/appstore.png);
+    }
+    &_googlePlay {
+        background-image: url(../images/google-play-badge.png);
+    }
+}
+
+.footer {
+    background-color: $brown;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    &_box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &_logo {
+        background-image: url(../images/footlogo.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 340px;
+        height: 90px;
+    }
+}
+
